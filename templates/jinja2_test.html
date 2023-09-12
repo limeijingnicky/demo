@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% for item in alist %}
+{{item}}
+{{loop.index}}
+{{loop.index0}}
+{% endfor %}
+
+{{'B' | do_listreverse }}
+{{alist | do_length }}
+
+</body>
+</html>

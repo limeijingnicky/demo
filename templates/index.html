@@ -1,0 +1,58 @@
+<!--导入过滤器-->
+{% load lre %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title%}
+    <title>父模板</title>
+     {% endblock title %}
+</head>
+<body>
+    <h1>this is template</h1>
+
+    {% block bodycotent %}
+    <h1>this is</h1>
+    {% endblock bodycotent %}
+
+
+    <h2>{{name}}</h2>
+    <h3>{{alist}}</h3>
+    <h4>{{alist.1}}</h4>
+    <h4>{{adict}}</h4>
+    <h4>{{adict.age}}</h4>
+
+
+<ul>
+    {% for item in alist%}
+<!--    <li> {{item}} </li>-->
+        {% if item  == 1  %}
+            <h1> 当前值为1 </h1>
+        {% else %}
+            <h2> 当前值不为1 </h2>
+        {% endif %}
+<!--    {{forloop.counter}}-->
+    {% endfor %}
+
+</ul>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!--加入过滤器-->
+{{ahtml | safe}}
+{{alist | length}}
+<!--{{aaa | default:'不存在'}}-->
+
+{{nowadate | date:'Y-m-d'}}
+
+{{alist | oddlre}}
+
+{{city | oddlen}}
+
+</body>
+</html>

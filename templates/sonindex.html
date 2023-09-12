@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+{% block title%}
+  <title>子模板</title>
+{% endblock title%}
+
+{% block bodycotent %}
+
+<h1>我是子模板</h1>
+
+{{block.super}}
+{% endblock bodycotent %}
+
